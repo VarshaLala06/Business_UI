@@ -8,10 +8,19 @@ const PORT = process.env.PORT || 8080;
 app.use(express.json());
 app.use(cors());
 
+// middlewares impports
+const authMiddleware = require("./middlewares/authMiddleware");
+
 // auth routes imports
 const authRoutes = require("./routes/authRoutes");
 app.use("/auth", authRoutes);
 
+app.get("/api/profile", authMiddleware, (req, res) => {
+    res.status(200).json({
+        message: "You accessed a protected route",
+        user: req.user
+    });
+});
 
 async function connectDb() {
     try {
