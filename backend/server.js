@@ -1,39 +1,35 @@
-const express=require("express")
-const mongoose=require("mongoose")
-const Transaction = require("./models/Transaction");
-const app=express()
-const PORT=8080
-app.use(express.json())
-const cors=require("cors")
-app.use(cors())
-connectDb()
+require("dotenv").config();
+
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const app = express();
+const PORT = process.env.PORT || 8080;
+app.use(express.json());
+app.use(cors());
+
+// auth routes imports
+const authRoutes = require("./routes/authRoutes");
+app.use("/auth", authRoutes);
+
 
 async function connectDb() {
-    try{
-        await mongoose.connect("mongodb://localhost:27017/expensetracker")
-        console.log("mongodb connected")
-    }
-    catch(err){
-        console.log("connection failed")
+    try {
+        await mongoose.connect(process.env.MONGO_URI);
+        console.log("MongoDB connected successfully");
+    } catch (err) {
+        console.error("Connection failed", err.message);
     }
 }
 
+app.get("/", (req, res) => {
+    res.send("Backend is running");
+});
 
-app.get("/",(req,res)=>{
-    res.send("Backend is running")
-})
-
-app.post("/add",async (req,res)=>{
-    try{
-        const transaction= await Transaction.create(req.body)
-        res.status(201).send("added succesfully")
-    }
-    catch(err){
-        res.status(500).send(err)
-    }
-
-})
-
-app.listen(PORT,()=>{
-    console.log("server is runnning")
-})
+async function startServer() {
+    await connectDb();
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
+}
+startServer();
