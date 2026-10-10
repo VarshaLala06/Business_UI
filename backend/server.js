@@ -13,7 +13,11 @@ const authMiddleware = require("./middlewares/authMiddleware");
 
 // auth routes imports
 const authRoutes = require("./routes/authRoutes");
+const clientRoutes = require("./routes/clientRoutes");
+
+
 app.use("/auth", authRoutes);
+app.use("/clients", clientRoutes);
 
 app.get("/api/profile", authMiddleware, (req, res) => {
     res.status(200).json({
