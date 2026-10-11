@@ -1,0 +1,478 @@
+
+/* ---------- Main Layout ---------- */
+
+.clients-page {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #202943;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+.clients-main {
+  flex: 1;
+  min-width: 0;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+/* ---------- Page Header ---------- */
+
+.clients-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.clients-header h1 {
+  margin: 0;
+  color: #202943;
+  font-size: 29px;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+}
+
+.clients-header p {
+  margin: 9px 0 0;
+  color: #858da3;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.clients-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 13px;
+  padding: 6px 10px;
+  border-radius: 7px;
+  background: #eeedff;
+  color: #5145d9;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ---------- Buttons ---------- */
+
+.client-primary-btn,
+.client-secondary-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 10px 17px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.client-primary-btn {
+  border: 1px solid #5145d9;
+  background: #5145d9;
+  color: #ffffff;
+}
+
+.client-primary-btn:hover {
+  background: #4035bf;
+  transform: translateY(-1px);
+}
+
+.client-secondary-btn {
+  border: 1px solid #e1e5ef;
+  background: #ffffff;
+  color: #59627a;
+}
+
+.client-secondary-btn:hover {
+  background: #f5f6fb;
+}
+
+.client-primary-btn:disabled,
+.client-secondary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------- Error Message ---------- */
+
+.clients-error {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+  background: #fff1f2;
+  color: #b42318;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ---------- Client Form Card ---------- */
+
+.client-form-card,
+.client-list-card {
+  margin-bottom: 28px;
+  overflow: hidden;
+  border: 1px solid #e9ecf4;
+  border-radius: 13px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(31, 41, 70, 0.025);
+}
+
+.client-form-card {
+  padding: 25px;
+}
+
+.client-form-card h2 {
+
+  margin: 0 0 15px;
+  color: #202943;
+  font-size: 24px;
+  font-weight: 750;
+}
+
+.client-form-card > p {
+  margin: 0 0 23px;
+  color: #858da3;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.client-form-grid {
+    
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.client-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.client-field label {
+  color: #4b556e;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.client-field input,
+.client-field select,
+.client-field textarea {
+  width: 100%;
+  min-height: 43px;
+  padding: 11px 13px;
+  box-sizing: border-box;
+  border: 1px solid #e0e5ef;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+  color: #28314a;
+  font-family: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.client-field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.client-field input::placeholder,
+.client-field textarea::placeholder {
+  color: #a4acbd;
+}
+
+.client-field input:focus,
+.client-field select:focus,
+.client-field textarea:focus {
+  border-color: #7166e8;
+  box-shadow: 0 0 0 3px rgba(81, 69, 217, 0.1);
+}
+
+.client-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #edf0f6;
+}
+
+/* ---------- Client List Header ---------- */
+
+.client-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 23px 25px;
+  border-bottom: 1px solid #edf0f6;
+}
+
+.client-list-header h2 {
+  margin: 0;
+  color: #202943;
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.client-list-header p {
+  margin: 7px 0 0;
+  color: #858da3;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ---------- Search and Filter ---------- */
+
+.client-list-header input,
+.client-list-header select {
+  min-height: 39px;
+  padding: 9px 12px;
+  border: 1px solid #e0e5ef;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+  color: #4b556e;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.client-list-header input:focus,
+.client-list-header select:focus {
+  border-color: #7166e8;
+  box-shadow: 0 0 0 3px rgba(81, 69, 217, 0.08);
+}
+
+/* ---------- Table ---------- */
+
+.client-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.client-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.client-table thead {
+  background: #fafbfe;
+}
+
+.client-table th {
+  padding: 15px 20px;
+  color: #8b94a9;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+}
+
+.client-table td {
+  padding: 16px 20px;
+  border-top: 1px solid #f0f2f7;
+  color: #68728a;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.client-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.client-table tbody tr:hover {
+  background: #fafaff;
+}
+
+.client-table .company-name {
+  color: #28314a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ---------- Status Badges ---------- */
+
+.client-status {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.client-status::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  content: "";
+}
+
+.client-status.active {
+  background: #e7f8ee;
+  color: #16834f;
+}
+
+.client-status.inactive {
+  background: #fff2df;
+  color: #ae6a0b;
+}
+
+/* ---------- Row Actions ---------- */
+
+.client-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 7px 11px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.edit-btn {
+  border: 1px solid #dedcff;
+  background: #f4f3ff;
+  color: #5145d9;
+}
+
+.edit-btn:hover {
+  background: #e9e7ff;
+}
+
+.delete-btn {
+  border: 1px solid #fbd5d5;
+  background: #fff4f4;
+  color: #c63d3d;
+}
+
+.delete-btn:hover {
+  background: #ffe5e5;
+}
+
+/* ---------- Empty State ---------- */
+
+.clients-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.clients-empty h3 {
+  margin: 15px 0 0;
+  color: #28314a;
+  font-size: 16px;
+}
+
+.clients-empty p {
+  max-width: 380px;
+  margin: 9px 0 0;
+  color: #858da3;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ---------- Responsive Design ---------- */
+
+@media (max-width: 1100px) {
+  .clients-main {
+    padding: 25px;
+  }
+
+  .client-table {
+    min-width: 750px;
+  }
+}
+
+@media (max-width: 768px) {
+  .clients-main {
+    padding: 20px 15px;
+  }
+
+  .clients-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .clients-header h1 {
+    font-size: 24px;
+    overflow-wrap: anywhere;
+  }
+
+  .client-form-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .client-form-card {
+    padding: 20px;
+  }
+
+  .client-list-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 19px;
+  }
+
+  .client-form-actions {
+    justify-content: stretch;
+  }
+
+  .client-form-actions button {
+    flex: 1;
+  }
+
+  .client-table {
+    min-width: 750px;
+  }
+}
+
+@media (max-width: 480px) {
+  .client-form-card,
+  .client-list-card {
+    border-radius: 10px;
+  }
+
+  .client-form-card {
+    padding: 16px;
+  }
+
+  .client-form-actions {
+    flex-direction: column;
+  }
+
+  .client-form-actions button {
+    width: 100%;
+  }
+
+  .client-list-header {
+    padding: 16px;
+  }
+}
